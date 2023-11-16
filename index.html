@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking Lot</title>
+    <style>
+        body{
+            background-image: url(background.jpeg);
+            height: auto;
+            width: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            text-align: center;
+            color: white;
+        }
+        .container{
+            background-color:rgb(4, 18, 138);
+            border:5px solid skyblue;
+            width: 350px;
+            height: 250px;
+            margin-left: 450px;
+            color: white;
+            margin-top: 100px;
+        }
+        #lab{
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome To Parking Lot</h1>
+    <div class="container">
+        <br><br>
+        <label for="input1" id="lab">Type Of the vehicle:</label>
+        
+        <select id="input1">
+            <option value="Two Wheeler">Two Wheeler</option>
+            <option value="Four Wheeler">Four Wheeler</option>
+        </select>
+        <br><br><br>
+        <label>Parking Time:</label>
+        
+        <select id="input2">
+            <option value="1-3hrs">1-3hrs</option>
+            <option value="3-6hrs">3-6hrs</option>
+            <option value="6-7hrs">6-7hrs</option>
+            <option value="More than 7hrs">More Than 7hrs</option>
+        </select>
+        <br><br>
+        <button type="submit" id="btn">Submit</button>
+        <h3 id="output"></h3>
+        <script>
+            let button= document.querySelector("button")
+            button.addEventListener('click',display)
+
+            function display(){
+                let input1= document.querySelector("#input1")
+                let input2= document.querySelector("#input2")
+                let output1= input1.options[input1.selectedIndex].value
+                let output2= input2.options[input2.selectedIndex].value
+
+                if(output1=="Two Wheeler")
+                   if(output2=="1-3hrs")
+                        output.innerHTML= output2 + "The parking charge is 450Rs"
+                    else if(output2=="3-6hrs")
+                        output.innerHTML= output2 +"The Parking charge is 600RS"
+                    else if(output2=="6-7hrs")
+                        output.innerHTML= output2+ "The parking charge is 900Rs"
+                    else if(output2=="More than 7hrs")
+                        output.innerHTML= output2+"The parking chage is 1200Rs"
+                    else
+                        output.innerHTML= "No DATA FOUND"
+                else if(output1=="Four Wheeler")
+                    if(output2=="1-3hrs")
+                        output.innerHTML= output2 + "The parking charge is 550Rs"
+                    else if(output2=="3-6hrs")
+                        output.innerHTML= output2 +"The Parking charge is 700RS"
+                    else if(output2=="6-7hrs")
+                        output.innerHTML= output2+ "The parking charge is 1000Rs"
+                    else if(output2=="More than 7hrs")
+                        output.innerHTML= output2+"The parking chage is 1500Rs"
+                    else
+                        output.innerHTML= "No DATA FOUND"  
+                else
+                    output.innerHTML="NO DATA FOUND"     
+            }
+        </script>
+    </div>
+</body>
+</html>
